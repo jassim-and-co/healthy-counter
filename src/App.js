@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Router } from "react-router-dom";
 
+import FamiliList from "./features/FamilyList";
 import MineralCounter from "./features/MineralCounter";
 import create from "history/createBrowserHistory";
 
@@ -74,6 +75,8 @@ class App extends Component {
         <Router history={history}>
           <div>
             <Route path={"/1"} component={MineralCounter} />
+
+            <Route path={"/family-list"} component={FamiliList} />
 
             <Route
               path={"/js-first-page"}
