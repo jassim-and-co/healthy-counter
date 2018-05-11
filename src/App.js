@@ -17,6 +17,9 @@ class App extends Component {
           <div>
             <ul>
               <li>
+                <Link to={"/"}>/</Link>
+              </li>
+              <li>
                 <Link to={"/healthy-counter"}>Healthy counter</Link>
               </li>
               <li>
