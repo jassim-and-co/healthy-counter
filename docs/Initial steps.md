@@ -5,3 +5,10 @@
 5.  git pull #синхронизировать код
 6.  npm start # запустить веб-сервер
 7.  git push # отправить свои изменения
+
+# How to update
+
+* Change file
+* Save file
+* Commit file (thirst button is a sidebar)
+* git push
