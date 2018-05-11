@@ -2,7 +2,7 @@ function getCost(previous_value, current_value) {
 
 
   var price_low = 0.9; // Стоимость 100 киловатт и меньше
-  var price_hight = 1.68; // Стоимостьпри потреблении больше ста киловатт
+  var price_hight = 1.68; // Стоимость при потреблении больше ста киловатт
   
   var upperLimitPrice = 0;
 var underLimitPrice;
