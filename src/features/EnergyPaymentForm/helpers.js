@@ -1,12 +1,13 @@
-function getCost() {
-  var previous_value = 0; //Предыдущие значения счетчика
-  var current_value = 0; // Показания счётчика на данный момент времени
+function getCost(previous_value, current_value) {
+
 
   var price_low = 0.9; // Стоимость 100 киловатт и меньше
   var price_hight = 1.68; // Стоимостьпри потреблении больше ста киловатт
+  
   var upperLimitPrice = 0;
-
-  var current_count = current_value - $previous_value;
+var underLimitPrice;
+var total_price;
+  var current_count = current_value - previous_value;
 
   if (current_count <= 100) {
     underLimitPrice = price_low * current_count;
