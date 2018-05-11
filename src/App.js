@@ -23,7 +23,7 @@ class App extends Component {
                 <Link to={"/healthy-counter"}>Healthy counter</Link>
               </li>
               <li>
-                <Link to={"/family-list"}>Family list</Link>
+                <Link to={"/family-list"}>Simple Form</Link>
               </li>
               <li>
                 <Link to={"/energy-payment-form"}>Energy Payment Form</Link>
