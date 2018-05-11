@@ -9,67 +9,6 @@ import create from "history/createBrowserHistory";
 
 const history = create();
 
-const FirstWebPageOfMyBrother = () => (
-  <div>
-    <div class="container">
-      <h3>Please complete this form to connect database:</h3>
-
-      <form method="post" class="form-inline">
-        <p>
-          Hostname:
-          <input
-            type="text"
-            name="hostname"
-            class="form-control"
-            size="20"
-            placeholder="Please input hostname"
-          />
-        </p>
-
-        <p>
-          Database:
-          <input
-            type="text"
-            class="form-control"
-            name="databasename"
-            size="20"
-            placeholder="database name"
-          />
-        </p>
-
-        <p>
-          Username:
-          <input
-            type="text"
-            name="user"
-            class="form-control"
-            size="20"
-            placeholder="Please input user name"
-          />
-        </p>
-
-        <p>
-          Password:
-          <input
-            type="password"
-            class="form-control"
-            name="password"
-            size="20"
-            placeholder="password"
-          />
-        </p>
-
-        <input
-          type="submit"
-          name="submit"
-          class="btn btn-info"
-          value="Connect"
-        />
-      </form>
-    </div>
-  </div>
-);
-
 class App extends Component {
   render() {
     return (
@@ -78,7 +17,7 @@ class App extends Component {
           <div>
             <ul>
               <li>
-                <Link to={"/1"}>Healthy counter</Link>
+                <Link to={"/healthy-counter"}>Healthy counter</Link>
               </li>
               <li>
                 <Link to={"/family-list"}>Family list</Link>
@@ -97,10 +36,6 @@ class App extends Component {
             <Route
               path={"/energy-payment-form"}
               component={EnergyPaymentForm}
-            />
-            <Route
-              path={"/js-first-page"}
-              component={FirstWebPageOfMyBrother}
             />
           </div>
         </Router>
