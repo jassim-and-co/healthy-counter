@@ -1,5 +1,5 @@
+import { Link, Route, Router } from "react-router-dom";
 import React, { Component } from "react";
-import { Route, Router } from "react-router-dom";
 
 import FamiliList from "./features/FamilyList";
 import MineralCounter from "./features/MineralCounter";
@@ -74,6 +74,15 @@ class App extends Component {
       <div>
         <Router history={history}>
           <div>
+            <ul>
+              <li>
+                <Link to={"/1"}>Healthy counter</Link>
+              </li>
+              <li>
+                <Link to={"/family-list"}>Family list</Link>
+              </li>
+            </ul>
+
             <Route path={"/1"} component={MineralCounter} />
 
             <Route path={"/family-list"} component={FamiliList} />
