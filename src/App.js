@@ -1,6 +1,7 @@
 import { Link, Route, Router } from "react-router-dom";
 import React, { Component } from "react";
 
+import EnergyPaymentForm from "./features/EnergyPaymentForm";
 import FamiliList from "./features/FamilyList";
 import MineralCounter from "./features/MineralCounter";
 import create from "history/createBrowserHistory";
@@ -81,12 +82,17 @@ class App extends Component {
               <li>
                 <Link to={"/family-list"}>Family list</Link>
               </li>
+              <li>
+                <Link to={"/energy-payment-form"}>Energy Payment Form</Link>
+              </li>
             </ul>
 
-            <Route path={"/1"} component={MineralCounter} />
-
+            <Route path={"/healthy-counter"} component={MineralCounter} />
             <Route path={"/family-list"} component={FamiliList} />
-
+            <Route
+              path={"/energy-payment-form"}
+              component={EnergyPaymentForm}
+            />
             <Route
               path={"/js-first-page"}
               component={FirstWebPageOfMyBrother}

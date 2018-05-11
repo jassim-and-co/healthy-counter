@@ -1,3 +1,1 @@
-function getCost() {
-  // TODO
-}
+function getCost(a, b) {}
