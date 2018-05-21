@@ -1,4 +1,4 @@
 import React from "react";
 import { runTestFunction } from "./helpers";
 
-export default () => <div>{runTestFunction()}</div>;
+export default () => <div class = "container">{runTestFunction()}</div>;
