@@ -14,6 +14,5 @@ function runTestFunction (argument1, argument2){
                        
                       return  message + result;
                   } 
-
-console.log (container(2, 102 ));
+                  
 export { runTestFunction };
