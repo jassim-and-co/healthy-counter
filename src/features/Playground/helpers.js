@@ -10,8 +10,15 @@ function runTestFunction (argument1, argument2){
             var result = argument1 * argument2; var message = "result of multiply:"; 
            } else if (argument1 >= 100 | argument2 >= 100){
                   var result = argument1 + argument2; var message = "Result of sum: ";
-                   }
-                       
+                   }   
+                   var ms = new Date(); 
+                   var s = ms.getTime();
+                   alert(s);
+                   var name = prompt("Please input your name:", "name");
+                   var sec = ms.getTime();
+                   alert(sec);
+                   var res = (sec - s)/1000;
+                   alert ("Прошло: " + res);
                       return  message + result;
                   } 
                   

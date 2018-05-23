@@ -53,14 +53,18 @@ var depositMoney = result;
 var rateForRate = depositRate*2;
     if (depositMoney !==0 & depositMoney < 100000) {
       add();
-      function add(){
-        var finalRateMoney = (depositMoney * rateForRate * depositTime)
+        function add(){
+          var finalRateMoney = (depositMoney * rateForRate * depositTime)
             /(yearDays*100); console.log("Сумма от процентов: "+finalRateMoney); 
             return finalRateMoney;
       }
 } 
 return result;
 }
-var ms = new Date(); 
-console.log ("Сумма от процентной тавки: " + account(100000, 12, 181, 365 )); 
-console.log (ms.getTime());
+// var ms = new Date(); 
+console.log ("Сумма от процентной cтавки: " + account(100000, 12, 181, 365 )); 
+// console.log (ms.getTime());
+
+
+
+
