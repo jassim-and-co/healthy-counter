@@ -55,12 +55,12 @@ var rateForRate = depositRate*2;
       add();
       function add(){
         var finalRateMoney = (depositMoney * rateForRate * depositTime)
-            /(yearDays*100); console.log(finalRateMoney); 
+            /(yearDays*100); console.log("Сумма от процентов: "+finalRateMoney); 
             return finalRateMoney;
       }
 } 
 return result;
 }
 var ms = new Date(); 
-console.log (account(100000, 12, 181, 365 )); 
+console.log ("Сумма от процентной тавки: " + account(100000, 12, 181, 365 )); 
 console.log (ms.getTime());
