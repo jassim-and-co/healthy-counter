@@ -50,7 +50,7 @@
 function account(sourceMoney, depositRate, depositTime, yearDays ){
 var result = (sourceMoney * depositRate * depositTime)/(yearDays*100);
 var depositMoney = result;
-var rateForRate = depositRate*2;
+var rateForRate = depositRate;
     if (depositMoney !==0 & depositMoney < 100000) {
       add();
         function add(){
