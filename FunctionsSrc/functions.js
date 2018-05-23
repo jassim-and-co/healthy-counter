@@ -17,35 +17,25 @@
 
 // console.log (container(2, 102 ));
 
-// function pow(x, n) {
-//     var result = x;
+function pow(x, n) {
+    var result = x;
   
-//     for (var temp = 0; temp < n; temp++) {
-//       result *= x;
-//     }return result;
-// }
-// console.log (pow(2, 8));
+    for (var temp = 0; temp < n; temp++) {
+      result *= x;
+    }return result;
+}
+console.log (pow(2, 5));
 
 
-// function pow(x, n) {
-//     if (n !== 1) { // пока n != 1, сводить вычисление pow(x,n) к pow(x,n-1)
-//       return x * pow(x, n - 1);
-//     } else {
-//       return x;
-//     }
-//   }
+function pow(x, n) {
+    if (n !== 1) { // пока n != 1, сводить вычисление pow(x,n) к pow(x,n-1)
+      return x * pow(x, n - 1);
+    } else {
+      return x;
+    }
+  }
   
-//   console.log( pow(2, 8) ); // 8
-
-// function go(arg1, arg2, arg3){
-//   if (arg1 < arg2){
-//     var diff = arg2 - arg1
-//   } for (var temp = 1; temp < diff; temp++){
-//       console.log(diff)
-//   } 
-//       return diff;
-
-// }console.log(go(5,8,9));
+  console.log( pow(2, 6) ); // 8
 
 function account(sourceMoney, depositRate, depositTime, yearDays ){
 var result = (sourceMoney * depositRate * depositTime)/(yearDays*100);
@@ -63,7 +53,12 @@ return result;
 }
 console.log ("Сумма от процентной cтавки: " + account(100000, 12, 181, 365 )); 
 
-
-
+function rec(arg1, arg2){
+if (arg1 > arg2){
+  var sub = rec(arg1-arg2);
+  return sub;
+  }
+}
+console.log(rec(25, 4));
 
 
