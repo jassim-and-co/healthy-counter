@@ -61,9 +61,8 @@ var rateForRate = depositRate;
 } 
 return result;
 }
-// var ms = new Date(); 
 console.log ("Сумма от процентной cтавки: " + account(100000, 12, 181, 365 )); 
-// console.log (ms.getTime());
+
 
 
 
