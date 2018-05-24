@@ -53,10 +53,10 @@ return result;
 }
 console.log ("Сумма от процентной cтавки: " + account(100000, 12, 181, 365 )); 
 
-function rec(arg1, arg2){
+function recurcive(arg1, arg2){
 if (arg1 > arg2){
-  var sub = rec(arg1-arg2);
-  return sub;
+  console.log(arg1, arg2);
+ return recurcive(arg1 - 1, arg2);
   }
 }
 console.log(rec(25, 4));

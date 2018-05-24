@@ -11,14 +11,13 @@ function runTestFunction (argument1, argument2){
            } else if (argument1 >= 100 | argument2 >= 100){
                   var result = argument1 + argument2; var message = "Result of sum: ";
                    }   
-                   var ms = new Date(); 
-                   var s = ms.getTime();
-                   alert(s);
+                   var millisec = new Date(); 
+                   var ms = millisec.getTime();//Время в миллисекундах
+                   var startTime = ms;
+                   alert(startTime/1000);//время в секундах
                    var name = prompt("Please input your name:", "name");
-                   var sec = ms.getTime();
-                   alert(sec);
-                   var res = (sec - s)/1000;
-                   alert ("Прошло: " + res);
+                   var endTime = (millisec.getTime() - ms)/1000;
+                   alert ("Прошло: " + endTime);
                       return  message + result;
                   } 
                   
