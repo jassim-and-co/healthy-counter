@@ -54,11 +54,12 @@ return result;
 console.log ("Сумма от процентной cтавки: " + account(100000, 12, 181, 365 )); 
 
 function recurcive(arg1, arg2){
-if (arg1 > arg2){
+if (arg1 >= arg2){
   console.log(arg1, arg2);
  return recurcive(arg1 - 1, arg2);
-  }
+  } 
 }
-console.log(rec(25, 4));
+// console.log(recurcive(25, 4));
+// console.log(new Date());
 
 
