@@ -1,6 +1,6 @@
 import PrintObject from "../../components/PrintObject";
 
-import React from "react";
+import React from "react"; // Object
 var db = {
   cup: 0,
   dbName: "Espresso"
