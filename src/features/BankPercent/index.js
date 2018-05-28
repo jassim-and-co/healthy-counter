@@ -8,10 +8,6 @@ var DB = {
   rate: 10
 };
 
-var results = {
-  account: 0
-};
-
 function getAccount(source, rate, depositTime, yearDays) {
   var result = source * rate * depositTime / (yearDays * 100);
   var depositMoney = result;
