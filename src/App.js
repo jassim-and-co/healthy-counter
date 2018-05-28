@@ -1,6 +1,7 @@
 import { Link, Route, Router } from "react-router-dom";
 import React, { Component } from "react";
 
+import BankPercent from "./features/BankPercent";
 import Contacts from "./features/Contacts";
 import EnergyPaymentForm from "./features/EnergyPaymentForm";
 import FamiliList from "./features/FamilyList";
@@ -37,6 +38,9 @@ class App extends Component {
                 <li>
                   <Link to={"/contacts"}>Contacts</Link>
                 </li>
+                <li>
+                  <Link to={"/bank-percent"}>Bank %</Link>
+                </li>
               </ul>
             </Grid>
             <Grid item xs={12} md={4}>
@@ -44,6 +48,7 @@ class App extends Component {
               <Route path={"/playground"} component={Playground} />
               <Route path={"/family-list"} component={FamiliList} />
               <Route path={"/contacts"} component={Contacts} />
+              <Route path={"/bank-percent"} component={BankPercent} />
               <Route
                 path={"/energy-payment-form"}
                 component={EnergyPaymentForm}
