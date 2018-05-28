@@ -17,24 +17,21 @@ export default class PrintObject extends React.Component {
     r: Math.random()
   };
   render() {
+    const self = this;
+    setInterval(
+      () =>
+        this.setState({
+          r: Math.random()
+        }),
+      100
+    );
+
     return (
       <Paper
         style={{
           maxWidth: "400px"
         }}
       >
-        <Button
-          style={{
-            width: "100%"
-          }}
-          onClick={() =>
-            this.setState({
-              r: Math.random()
-            })
-          }
-        >
-          UPDATE
-        </Button>
         <Divider />
         <br />
         <br />
