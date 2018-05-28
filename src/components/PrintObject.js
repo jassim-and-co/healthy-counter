@@ -16,20 +16,20 @@ export default class PrintObject extends React.Component {
   state = {
     r: Math.random()
   };
+  constructor(props) {
+    super(props);
+    setInterval(() => {
+      this.setState({
+        r: Math.random()
+      });
+    }, 250);
+  }
   render() {
     const self = this;
-    setInterval(
-      () =>
-        this.setState({
-          r: Math.random()
-        }),
-      250
-    );
-
     return (
       <Paper
         style={{
-          maxWidth: "400px"
+          maxWidth: "500px"
         }}
       >
         <Table>
@@ -43,7 +43,7 @@ export default class PrintObject extends React.Component {
             {flow(
               toPairs,
               map(([a, b]) => (
-                <TableRow>
+                <TableRow key={a}>
                   <TableCell>{a}</TableCell>
 
                   <TableCell>{b}</TableCell>
