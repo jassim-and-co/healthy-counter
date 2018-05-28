@@ -32,9 +32,6 @@ export default class PrintObject extends React.Component {
           maxWidth: "400px"
         }}
       >
-        <Divider />
-        <br />
-        <br />
         <Table>
           <TableHead>
             <TableRow>
