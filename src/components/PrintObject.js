@@ -23,7 +23,7 @@ export default class PrintObject extends React.Component {
         this.setState({
           r: Math.random()
         }),
-      100
+      250
     );
 
     return (
