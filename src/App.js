@@ -1,6 +1,7 @@
 import { Link, Route, Router } from "react-router-dom";
 import React, { Component } from "react";
 
+import Contacts from "./features/Contacts";
 import EnergyPaymentForm from "./features/EnergyPaymentForm";
 import FamiliList from "./features/FamilyList";
 import MineralCounter from "./features/MineralCounter";
@@ -31,11 +32,15 @@ class App extends Component {
               <li>
                 <Link to={"/playground"}>Playground</Link>
               </li>
+              <li>
+                <Link to={"/contacts"}>Contacts</Link>
+              </li>
             </ul>
 
             <Route path={"/healthy-counter"} component={MineralCounter} />
             <Route path={"/playground"} component={Playground} />
             <Route path={"/family-list"} component={FamiliList} />
+            <Route path={"/contacts"} component={Contacts} />
             <Route
               path={"/energy-payment-form"}
               component={EnergyPaymentForm}
