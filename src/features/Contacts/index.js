@@ -33,7 +33,7 @@ export default () => (
       </p>
       <p>
         <h3>Massage</h3>
-        <button onClick={msg}> Massage </button>
+        <button onClick={msg}> Message </button>
       </p>
       <p>
         <h3>Reset</h3>
