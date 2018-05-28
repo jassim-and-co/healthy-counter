@@ -1,5 +1,6 @@
 import { Link, Route, Router } from "react-router-dom";
 import React, { Component } from "react";
+import { flow, map } from "lodash/fp";
 
 import BankPercent from "./features/BankPercent";
 import Contacts from "./features/Contacts";
@@ -12,47 +13,74 @@ import create from "history/createBrowserHistory";
 
 const history = create();
 
+const Main = () => <h1>JavaScript Puzzles</h1>;
+
+const PARTITIONS = [
+  {
+    link: "/",
+    name: "Main Page",
+    component: Main
+  },
+  {
+    link: "/healthy-counter",
+    name: "Health Counter",
+    component: MineralCounter
+  },
+  {
+    link: "/family-list",
+    name: "Family List",
+    component: FamiliList
+  },
+  {
+    link: "/energy-payment-form",
+    name: "Energy Payment Form",
+    component: EnergyPaymentForm
+  },
+  {
+    link: "/playground",
+    name: "PlayGround",
+    component: Playground
+  },
+  {
+    link: "/contacts",
+    name: "Contacts",
+    component: Contacts
+  },
+  {
+    link: "/bank-percent",
+    name: "Bank %",
+    component: BankPercent
+  }
+];
+
 class App extends Component {
   render() {
     return (
       <div>
         <Router history={history}>
-          <Grid container>
-            <Grid item xs={12} md={4}>
+          <Grid container spacing={16}>
+            <Grid item xs={12} md={3}>
               <ul>
-                <li>
-                  <Link to={"/"}>/</Link>
-                </li>
-                <li>
-                  <Link to={"/healthy-counter"}>Healthy counter</Link>
-                </li>
-                <li>
-                  <Link to={"/family-list"}>Simple Form</Link>
-                </li>
-                <li>
-                  <Link to={"/energy-payment-form"}>Energy Payment Form</Link>
-                </li>
-                <li>
-                  <Link to={"/playground"}>Playground</Link>
-                </li>
-                <li>
-                  <Link to={"/contacts"}>Contacts</Link>
-                </li>
-                <li>
-                  <Link to={"/bank-percent"}>Bank %</Link>
-                </li>
+                {flow(
+                  map(part => (
+                    <li key={part.link}>
+                      <Link to={part.link}>{part.name}</Link>
+                    </li>
+                  ))
+                )(PARTITIONS)}
               </ul>
             </Grid>
-            <Grid item xs={12} md={4}>
-              <Route path={"/healthy-counter"} component={MineralCounter} />
-              <Route path={"/playground"} component={Playground} />
-              <Route path={"/family-list"} component={FamiliList} />
-              <Route path={"/contacts"} component={Contacts} />
-              <Route path={"/bank-percent"} component={BankPercent} />
-              <Route
-                path={"/energy-payment-form"}
-                component={EnergyPaymentForm}
-              />
+            <Grid item xs={12} md={6}>
+              {flow(
+                map(part => (
+                  <Route
+                    key={part.link}
+                    exact={true}
+                    path={part.link}
+                    component={part.component}
+                  />
+                ))
+              )(PARTITIONS)}
             </Grid>
           </Grid>
         </Router>
