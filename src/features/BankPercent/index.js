@@ -1,15 +1,18 @@
 import PrintObject from "../../components/PrintObject";
 import React from "react";
 
-var db = {
+var DB = {
   source: 10,
   depositTime: 20,
   yearDays: 365,
-  rate: 10,
-  value: 0
+  rate: 10
 };
 
-function getValue(source, rate, depositTime, yearDays) {
+var results = {
+  account: 0
+};
+
+function getAccount(source, rate, depositTime, yearDays) {
   var result = source * rate * depositTime / (yearDays * 100);
   var depositMoney = result;
   if ((depositMoney !== 0) & (depositMoney < 100000)) {
@@ -23,28 +26,26 @@ function getValue(source, rate, depositTime, yearDays) {
   return result;
 }
 
-function updateValue() {
-  db.value = getValue(db.source, db.rate, db.depositTime, db.yearDays);
-}
-
 function updateRatePlus() {
-  db.rate = db.rate + 1;
+  DB.rate = DB.rate + 1;
+  DB.result = getAccount(DB.source, DB.rate, DB.depositTime, DB.yearDays);
 }
 
 function updateRateMinus() {
-  db.rate = db.rate - 1;
+  DB.rate = DB.rate - 1;
+  DB.result = getAccount(DB.source, DB.rate, DB.depositTime, DB.yearDays);
 }
 
 export default () => (
   <div>
-    <h3>Change</h3>
-    <button onClick={updateRatePlus}> Add 1 %</button>
-    <button onClick={updateRateMinus}> Minus 1 %</button>
+    <h3>Change rate %</h3>
+
+    <button onClick={updateRateMinus}> -1 %</button>
+    <button onClick={updateRatePlus}> +1 %</button>
+
     <br />
-    <h3>Update</h3>
-    <button onClick={updateValue}>Update value</button>
     <br />
-    <br />
-    <PrintObject data={db} />
+    <h3>View results</h3>
+    <PrintObject data={DB} />
   </div>
 );
