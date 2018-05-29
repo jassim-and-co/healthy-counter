@@ -43,8 +43,7 @@ function account(sourceMoney, Rate, depositTime, yearDays) {
   if ((depositMoney !== 0) & (depositMoney < 100000)) {
     add();
     function add() {
-      var finalRateMoney =
-        depositMoney * Rate * depositTime / (yearDays * 100);
+      var finalRateMoney = depositMoney * Rate * depositTime / (yearDays * 100);
       console.log("Сумма от процентов: " + finalRateMoney);
       return finalRateMoney;
     }
@@ -53,29 +52,21 @@ function account(sourceMoney, Rate, depositTime, yearDays) {
 }
 console.log("Сумма от процентной cтавки: " + account(100000, 12, 181, 365));
 
-// function recurcive(arg1, arg2){
-// if (arg1 >= arg2){
-//   console.log(arg1, arg2);
-//  return recurcive(arg1 - 1, arg2);
-//   }
-// }
-// console.log(recurcive(25, 4));
-// console.log(new Date());
-
-function sumTo(n) {
-  if (n == 1) return 1;
-  return n + sumTo(n - 1);
-}
-console.log(sumTo(10));
-
-function sumTo2(n) {
+function sumToCycle(n) {
   var sum = 0;
   for (var i = 1; i <= n; i++) {
-    sum += i;
+    console.log(sum);
+    sum = sum + i;
   }
   return sum;
 }
-console.log(sumTo2(100));
+console.log(sumToCycle(5));
+
+function sumTo(n) {
+  if (n == 1) return 1;
+  else return n + sumTo(n - 1);
+}
+console.log(sumTo(5));
 
 function factorial(n) {
   var result = 0;
